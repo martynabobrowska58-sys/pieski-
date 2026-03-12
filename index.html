@@ -2,114 +2,236 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Świat Psów</title>
+<title>Magiczny Świat Psów</title>
 
 <style>
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
-    margin:0;
+font-family:Arial;
+margin:0;
+color:white;
+text-align:center;
+
+background:linear-gradient(-45deg,#ff6b6b,#feca57,#48dbfb,#1dd1a1);
+background-size:400% 400%;
+animation:bg 12s infinite;
 }
 
-header{
-    background:#4CAF50;
-    color:white;
-    text-align:center;
-    padding:20px;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.container{
-    width:80%;
-    margin:auto;
+.section{
+width:80%;
+margin:auto;
+background:rgba(0,0,0,0.5);
+padding:25px;
+margin-top:30px;
+border-radius:15px;
+transition:0.4s;
 }
 
-.breed{
-    background:white;
-    padding:20px;
-    margin:20px 0;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+.section:hover{
+transform:scale(1.02);
+box-shadow:0 0 20px white;
 }
 
 img{
-    width:300px;
-    border-radius:10px;
+width:300px;
+border-radius:15px;
+transition:0.4s;
 }
 
-a{
-    color:#4CAF50;
-    font-weight:bold;
+img:hover{
+transform:scale(1.1);
 }
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.gallery img{
+width:200px;
+}
+
+h1{
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px white;}
+to{ text-shadow:0 0 30px yellow;}
+}
+
+/* GRA */
+
+#gameArea{
+position:relative;
+width:500px;
+height:300px;
+margin:auto;
+background:#222;
+overflow:hidden;
+border-radius:10px;
+}
+
+#dog{
+position:absolute;
+bottom:10px;
+left:200px;
+font-size:40px;
+}
+
+.bone{
+position:absolute;
+font-size:30px;
+}
+
+#score{
+font-size:20px;
+margin-top:10px;
+}
+
 </style>
-
 </head>
 
 <body>
 
-<header>
-<h1>🐶 Świat Psów</h1>
-<p>Poznaj najpopularniejsze rasy psów</p>
-</header>
+<h1>🐶 Magiczny Świat Psów</h1>
 
-<div class="container">
+<div class="section">
 
-<div class="breed">
 <h2>Labrador Retriever</h2>
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/YellowLabradorLooking_new.jpg">
 
 <p>
-Labrador Retriever to jedna z najpopularniejszych ras psów na świecie.
-Są bardzo przyjazne, inteligentne i łatwe w szkoleniu. Często pracują
-jako psy przewodniki lub ratownicze.
+Labrador to bardzo przyjazny i inteligentny pies.
+Często pracuje jako pies ratowniczy lub przewodnik.
 </p>
 
-<p>
-🎥 Zobacz film:
-<a href="https://www.youtube.com/watch?v=3XxqR3R2Yz0" target="_blank">
-Labrador Retriever – ciekawostki
-</a>
-</p>
 </div>
 
 
-<div class="breed">
-<h2>Owczarek Niemiecki</h2>
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/German_Shepherd_Dog.jpg">
+<div class="section">
 
-<p>
-Owczarek niemiecki to bardzo inteligentna i lojalna rasa.
-Często pracuje w policji, wojsku oraz służbach ratowniczych.
-Jest odważny i bardzo oddany właścicielowi.
-</p>
+<h2>📸 Galeria Psów</h2>
 
-<p>
-🎥 Zobacz film:
-<a href="https://www.youtube.com/watch?v=QkR3b0hA9mM" target="_blank">
-Owczarek Niemiecki – wszystko o rasie
-</a>
-</p>
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a">
+<img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a">
+<img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2">
+<img src="https://images.unsplash.com/photo-1552053831-71594a27632d">
+
+</div>
+
 </div>
 
 
-<div class="breed">
-<h2>Golden Retriever</h2>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Golden_Retriever_Carlos_(10581910556).jpg">
+<div class="section">
 
-<p>
-Golden Retriever to bardzo łagodny i przyjazny pies.
-Świetnie dogaduje się z dziećmi i jest idealnym psem rodzinnym.
-Uwielbia zabawę i ruch.
-</p>
+<h2>🐾 Ciekawostki</h2>
 
-<p>
-🎥 Zobacz film:
-<a href="https://www.youtube.com/watch?v=V4LnorVVxfw" target="_blank">
-Golden Retriever – charakterystyka rasy
-</a>
-</p>
-</div>
+<ul style="text-align:left;display:inline-block">
+<li>Psy mają ponad 220 milionów receptorów zapachowych.</li>
+<li>Nos psa jest unikalny jak odcisk palca.</li>
+<li>Psy potrafią rozumieć nawet 250 słów.</li>
+<li>Psy mogą śnić podobnie jak ludzie.</li>
+</ul>
 
 </div>
+
+
+<div class="section">
+
+<h2>🎮 Mini Gra – Złap Kość</h2>
+
+<p>Steruj psem strzałkami ← → i łap kości.</p>
+
+<div id="gameArea">
+
+<div id="dog">🐕</div>
+
+</div>
+
+<div id="score">Punkty: 0</div>
+
+</div>
+
+
+<script>
+
+let dog=document.getElementById("dog")
+let gameArea=document.getElementById("gameArea")
+let score=0
+let dogX=200
+
+document.addEventListener("keydown",e=>{
+
+if(e.key==="ArrowLeft"){
+dogX-=20
+}
+
+if(e.key==="ArrowRight"){
+dogX+=20
+}
+
+if(dogX<0) dogX=0
+if(dogX>460) dogX=460
+
+dog.style.left=dogX+"px"
+
+})
+
+
+function spawnBone(){
+
+let bone=document.createElement("div")
+bone.classList.add("bone")
+bone.innerHTML="🦴"
+
+bone.style.left=Math.random()*460+"px"
+bone.style.top="0px"
+
+gameArea.appendChild(bone)
+
+let fall=setInterval(()=>{
+
+bone.style.top=(bone.offsetTop+5)+"px"
+
+if(bone.offsetTop>270 &&
+bone.offsetLeft>dogX-20 &&
+bone.offsetLeft<dogX+40){
+
+score++
+document.getElementById("score").innerText="Punkty: "+score
+bone.remove()
+clearInterval(fall)
+
+}
+
+if(bone.offsetTop>300){
+bone.remove()
+clearInterval(fall)
+}
+
+},30)
+
+}
+
+setInterval(spawnBone,1200)
+
+</script>
 
 </body>
 </html>
